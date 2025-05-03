@@ -1,0 +1,79 @@
+.HeaderContainer{
+    width: 100%;
+    /* height: 100%; */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.Header{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-self: center;
+    font-size: 1.1rem;
+    
+}
+.Header .Login{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+
+}
+.Header .Login button{
+    height: fit-content;
+    padding: .7rem 2.1rem;
+    border-radius: 50px;
+    transition: all .3s ease;
+
+}
+.Globe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.Globe i{
+    font-size: 1.5rem;
+    color: rgb(61, 61, 61);
+}
+.Header nav ul{
+    display: flex;
+}
+.Header nav ul li{
+    padding: 20px;
+    list-style: none;
+    font-weight: 600;
+}
+.Bar{
+    display: none;
+    padding: .1rem .5rem;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(207, 57, 2, 0.94) 0%, 
+                                    rgba(255, 165, 0, 1 ) 80%);
+}
+.Bar:hover{
+    background: orangered;
+    
+}
+
+@media (max-width: 1200px) {
+    .Header nav ul, .Header .Login{
+        display: none;
+    }
+    .Header{
+        padding: 20px 0px 0px 0px;
+        width: 95%;
+    }
+    .Bar{
+        display: block;
+    }
+}

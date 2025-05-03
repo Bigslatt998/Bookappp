@@ -1,0 +1,141 @@
+.ServicesContainer{
+    width: 100%; height: 100%;
+}
+.ServicesContainer .Service{
+    width: 90%; height: 100%;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    /* gap: 120px; */
+    justify-content: space-around;
+
+}
+.BBos{
+    display: flex;
+    height: 300px; width: 100%;
+    gap: 100px;
+    overflow: scroll;
+    scrollbar-width: none;
+    white-space: nowrap;
+    position: relative;
+}
+.Box{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 150px; height: 150px;
+    transform: rotate(10deg);
+    position: relative;
+    cursor: grab;
+}
+.BoxImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    width: 180px; height: 100%;
+    border-radius: 30% 30% 30% 30% / 100% 60% 60% 60%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.Back{
+    position: absolute;
+    width: 180px; height: 100%;
+    z-index: 0;
+    left: 20px;
+    top: 20px;
+    transform: rotate(10deg);
+    border-radius: 30% 30% 30% 30% / 100% 60% 60% 60%;
+}
+.Box img{
+    width: 100px; height: 100px;
+}
+
+.Cont{
+    display: flex;
+    justify-content: space-between;
+}
+.ServiceBooking{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+}
+.ServiceBooking h2{
+    width: 100%;
+    font-size: clamp(30px, 3.5vw, 60px);
+    text-align: center;
+    place-self: center;
+}
+.Container2 img{
+    width: 450px;
+    height: 550px;
+    margin-right: 60px;
+    cursor: grab;
+    /* filter: drop-shadow(0px 5px 10px rgba(255, 255, 255, 0.2)); */
+}
+.Container1Box .Icon{
+    width: 80px; height: 80px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Container1, .Container3{
+    flex-direction: column;
+    display: flex;
+}
+.Container1Box{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+.Head{
+    font-size: 23px;
+    font-weight: 700;
+} 
+.Textt{
+    font-size: 1.2rem;
+    font-weight: 400;
+    width: 100%;
+}
+@media (max-width: 1000px) {
+    .Cont{
+    flex-direction: column;
+    gap: 50px;
+
+    }
+    .Container1, .Container3{
+        flex-direction: row;
+    }
+    .Container2{
+        place-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Container2 img{
+        width: 80%;
+        place-self: center;
+    }
+    .Textt{
+        width: 80%;
+    }
+}
+@media (max-width: 700px) {
+    .Container1, .Container3{
+        flex-direction: column;
+    }
+    .Textt{
+        width: 90%;
+    }
+    .Container2 img{
+        height: 300px;
+    }
+}

@@ -1,0 +1,215 @@
+.RegistrationContainer{
+    width: 100%;
+    height: calc(130vh + 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.RegistrationContainer .Registration{
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 29px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.RegistrationContainer .RegistrationIMG{
+    width: 50%;
+    height: initial;
+    /* background-color: rgb(248, 224, 228); */
+
+}
+.RegistrationContainer .Containerr{
+    height: 100%;
+    /* width: 90%; */
+    place-self: center;
+
+}
+.RegistrationIMG .Box2{
+    height: inherit;
+    width: 95%;
+    place-self: center;
+
+}
+
+.RegistrationIMG .Box2 img{
+    width: 100%;
+    height: 100%;
+    place-self: center;
+}
+
+.RegistrationToobookapp{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    
+}
+.RegistrationToobookappContainer{
+    width: 90%;
+    height: 80%;
+}
+.RegistrationToobookappContainer .username, 
+.RegistrationToobookappContainer .passsword{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    height: fit-content;
+    
+}
+.ErrorMessa{
+    color: red;
+    font-size: .8rem;
+    margin-top: -4px;
+}
+.passsword i{
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    cursor: pointer;
+    color: rgb(119, 118, 118);
+    z-index: 1;
+}
+.p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.HomeIcon{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background-color: orange;
+    top: 20px;
+    right: 0;
+    border-radius: 50px 0px 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.RegistrationToobookappContainer form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.RegistrationToobookappContainer .ForgetPass{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(119, 118, 118);
+}
+
+.RegistrationToobookappContainer .username input, 
+.RegistrationToobookappContainer .passsword input{
+    background: transparent;
+    border: 1px solid rgb(119, 118, 118);
+    height: 50px;
+    color: black;
+    padding-inline: 10px;
+    position: relative;
+    outline: none;
+}
+.RegistrationToobookappContainer form label span{
+    color: red;
+}
+
+.RegistrationToobookappContainer form button{
+    background: red;
+}
+.RegistrationContainer .TermsCondition{
+    color: rgb(119, 118, 118);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.RegistrationContainer .TermsCondition a{
+    color: black;
+}
+.RegistrationToobookappContainer .TermsCondition input[type='checkbox']{
+    accent-color: red;
+}
+.RegistrationToobookappContainer .CheckboxContainer{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.RegistrationToobookappContainer .CheckboxContainer input[type='checkbox']{
+    display: none;
+}
+.RegistrationToobookappContainer .CheckboxContainer .checkmark{
+    width: 16px; height: 16px;
+    border: 2px solid red;
+    background-color: transparent;
+    margin-right: 8px;
+    position: relative;
+    border-radius: 2px;
+    transition: transform 5s ease-in-out;
+
+}
+.RegistrationToobookappContainer .CheckboxContainer input[type='checkbox']:checked + .checkmark{
+    background-color: red;
+    transition: transform 5s ease-in-out;
+}   
+.RegistrationToobookappContainer .CheckboxContainer input[type='checkbox']:checked + .checkmark::before{
+    content: '';
+    position: absolute;
+    left: 4px; top: 0px;
+    width: 4px; height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.RegistrationToobookappContainer label span{
+    /* color: red; */
+}
+.HomeIcon.btnDark{
+    background: #692003;
+}
+.HomeIcon.btnLight{
+    background: rgba(207, 57, 2, 0.94);
+}
+.submitBTN.btnDark{
+    background: #692003;
+}
+.submitBTN.btnLight{
+    background: rgba(207, 57, 2, 0.94);
+}
+.PPP.btnDark{
+    color: #692003;
+}
+.PPP.btnLight{
+    color: rgba(207, 57, 2, 0.94);
+}
+.PPP a.btnDark{
+    color: rgb(160, 158, 158);
+}
+.PPP a.btnLight{
+    color: black;
+}
+@media (max-width: 1000px) {
+    .RegistrationContainer .Registration{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .RegistrationContainer .RegistrationIMG{
+        padding: 10px;
+
+        width: 100%;
+    }
+    .RegistrationContainer .RegistrationToobookapp{
+        width: 100%;
+    }
+    .RegistrationContainer{
+        width: 100%;
+        height: calc(100% + 50px);
+    }
+}

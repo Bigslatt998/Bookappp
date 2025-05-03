@@ -1,0 +1,124 @@
+.MainContainer{
+    width: 100%;
+    /* height: 100%; */
+    height: 450px;
+    margin-top: 100px;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Main{
+    width: 50%;
+    /* height: 450px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.Main h1{
+    font-size: clamp(40px, 4.4vw, 50px);
+
+}
+.Find{
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    place-self: center;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.Find input{
+    padding-inline-start: 50px;
+    height: 45px;
+    width: 15vw;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.MainContainer .Location{
+    position: relative;
+}
+.MainContainer .Location span{
+    position: absolute;
+    left: 10px;
+    top: 15%;
+    transform: translate(50% 50%);
+    font-size: 25px;
+    color: orangered;
+}
+
+.MainContainer .Services{
+    position: relative;
+}
+.MainContainer .Services span{
+    position: absolute;
+    left: 10px;
+    top: 15%;
+    transform: translate(50% 50%);
+    font-size: 25px;
+    color: orangered;
+    
+}
+.Find button{
+    /* height: 10px; */
+    padding: .6rem 0rem;
+    width: 180px;
+    border-radius: 50px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+   font-size: 1rem;
+   align-items: center;
+     font-weight: 800;
+    /* transition: all 3s ease; */
+    font-family:Arial, Helvetica, sans-serif;
+    box-shadow: rgba(207, 57, 2, 0.94) 0px 1px 10px 0px;
+
+}
+
+.Find button i{
+}
+@media (max-width: 1100px) {
+    .Main{
+        width: 60%;
+    }
+}
+
+@media (max-width: 700px) {
+    .Main{
+        width: 90%;
+        /* height: 650px */
+    }
+    hr{
+        display: none;
+    }
+    .Find{
+        width: 90%;
+        flex-direction: column;
+    }
+    .MainContainer{
+        height: 600px;
+    }
+    .Find input{
+        width: 80%;
+        padding-inline-start: 10px;
+    }
+    .Find button{
+        width: 80%;
+        border-radius: 50px;
+    
+    }
+    .Find .button span{
+       
+    }
+    .MainContainer .Location span, .Services span{
+        /* left: 30px; */
+    }
+}

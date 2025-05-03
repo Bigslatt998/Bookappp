@@ -1,0 +1,80 @@
+import React, { createContext, useEffect, useRef, useState} from 'react'
+export const ThemeContext = createContext()
+import { DarkColor, LightColor } from './List'
+
+const ThemeProvider = ({children}) => {
+  const storedTheme = JSON.parse(localStorage.getItem("isDarkMode"))
+    const [isDarkMood, setIsDarkMood] = useState( storedTheme ||false)
+    useEffect(()=> {
+      localStorage.setItem("isDarkMode", JSON.stringify(isDarkMood))
+    }, [isDarkMood])
+
+    useEffect(() => {
+      document.body.className = isDarkMood ? 'dark' : 'light';
+      localStorage.setItem("isDarkMood", isDarkMood)
+    }, [isDarkMood])
+    const handleTheme = () => {
+      setIsDarkMood(!isDarkMood)
+    }
+
+    const [isMenue, setIsMenue] = useState(false)
+      const HandleMeneOpen = () => {
+        setIsMenue(!isMenue)
+      }
+      const HomeRef = useRef(null)
+      const scrollHome = () => {
+        HomeRef.current?.scrollIntoView({ behavior: 'smooth'})
+        console.log('hi')
+      }
+      const [currentStep, setCurrentStep] = useState(1)
+      const [isBookBox, setIsBookBox] = useState(false)
+      const [isBookBoxTWO, setIsBookBoxTWO] = useState(false)
+      const [selectedStaff, setSelectedStaff] = useState([])
+      const [selectedShop, setSelectedShop] = useState(null)
+      const [SearchTerm, setSearchTerm] = useState('')
+      const [selectedDate, setSelectedDate] = useState([])
+      const [selectedTime, setSelectedTime] = useState([])
+      const [staffname, setStaffname] = useState(null)
+        // const handleStaffSelection = (staff) => {
+        //   setStaffname(staff)
+        //   console.log(staff)
+        // }
+      
+         
+        
+  const [isChat, setIsChat] = useState(false)
+         
+          const ClostBookDetails = () => {
+            setIsBookBox(false)
+            setIsChat(false)
+            // setCurrentStep(1)
+
+          }
+          const ClostBookDetailsTWO = () => {
+            setIsBookBoxTWO(false)
+
+          }
+
+        
+        
+          
+  return (
+    <ThemeContext.Provider value={{ handleTheme, setSelectedDate, 
+                                    setIsChat, isChat,
+                                    selectedStaff, setStaffname,
+                                    staffname, setSelectedTime,
+                                    selectedTime, selectedDate,
+                                    selectedShop, setSelectedShop, 
+                                    setSelectedStaff, isBookBox, 
+                                    setIsBookBox, ClostBookDetails, 
+                                    ClostBookDetailsTWO, HomeRef,
+                                    currentStep, setCurrentStep,
+                                    scrollHome, isDarkMood, isMenue, 
+                                    setIsMenue, HandleMeneOpen}}>
+        {children}
+    </ThemeContext.Provider>
+
+  )
+}
+
+export default ThemeProvider

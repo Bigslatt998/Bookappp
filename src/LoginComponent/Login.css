@@ -1,0 +1,215 @@
+.LoginContainer{
+    width: 100%;
+    height: calc(100vh + 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.LoginContainer .Login{
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 29px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.LoginContainer .LoginIMG{
+    width: 40%;
+    height: initial;
+
+}
+.LoginContainer .Containe{
+    height: 100%;
+    place-self: center;
+
+}
+
+
+.LoginIMG .Box2{
+    height: inherit;
+    width: 100%;
+
+}
+
+.LoginIMG .Box2 img{
+    width: 100%;
+    height: 100%;
+}
+
+.LoginToobookapp{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.LoginToobookappContainer{
+    width: 90%;
+    height: 80%;
+}
+.username, .passsword{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    height: fit-content;
+    
+}
+.ErrorMessage{
+    color: red;
+    font-size: .8rem;
+    margin-top: -4px;
+}
+.passsword i{
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    cursor: pointer;
+    color: rgb(119, 118, 118);
+    z-index: 1;
+}
+.p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.HomeIcon{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 20px;
+    right: 0;
+    border-radius: 50px 0px 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.LoginToobookappContainer form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.LoginToobookappContainer .ForgetPass{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(119, 118, 118);
+}
+
+.LoginToobookappContainer .username input, 
+.LoginToobookappContainer .passsword input{
+    background: transparent;
+    border: 1px solid rgb(119, 118, 118);
+    height: 50px;
+    color: black;
+    padding-inline: 10px;
+    position: relative;
+    outline: none;
+}
+.LoginToobookappContainer .LoginToobookappContainer form label span{
+    color: red;
+}
+
+.LoginToobookappContainer form button{
+    background: red;
+}
+.TermsCondition{
+    color: rgb(119, 118, 118);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.TermsCondition a{
+    color: black;
+}
+.TermsCondition input[type='checkbox']{
+    accent-color: red;
+}
+.CheckboxContainer{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.CheckboxContainer input[type='checkbox']{
+    display: none;
+}
+.CheckboxContainer .checkmark{
+    width: 16px; height: 16px;
+    border: 2px solid red;
+    background-color: transparent;
+    margin-right: 8px;
+    position: relative;
+    border-radius: 2px;
+    transition: transform 5s ease-in-out;
+
+}
+.CheckboxContainer input[type='checkbox']:checked + .checkmark{
+    background-color: red;
+    transition: transform 5s ease-in-out;
+}   
+.CheckboxContainer input[type='checkbox']:checked + .checkmark::before{
+    content: '';
+    position: absolute;
+    left: 4px; top: 0px;
+    width: 4px; height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.LoginToobookappContainer label span{
+    color: red;
+}
+.HomeIcon.btnDark{
+    background: #692003;
+}
+.HomeIcon.btnLight{
+    background: rgba(207, 57, 2, 0.94);
+}
+@media (max-width: 1000px) {
+    .LoginToobookappContainer .ForgetPass{
+        flex-direction: row;
+        align-items: center;
+    }
+    .LoginContainer .Login{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .LoginContainer .LoginIMG{
+        width: 100%;
+    }
+    .LoginContainer .LoginToobookapp{
+        width: 100%;
+    }
+    .LoginContainer{
+        width: 100%;
+        height: calc(100% + 50px);
+    }
+}
+@media (max-width: 600px) {
+    .LoginContainer{
+        width: 100%;
+        height: calc(100% + 50px);
+    }
+    .LoginContainer .Login{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .LoginToobookappContainer .ForgetPass{
+        flex-direction: column;
+        align-items: start;
+    }
+    .LoginContainer .LoginIMG{
+        width: 100%;
+    }
+    .LoginContainer .LoginToobookapp{
+        width: 100%;
+    }
+}
