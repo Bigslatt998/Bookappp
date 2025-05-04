@@ -85,8 +85,12 @@
     font-size: .8rem;
     cursor: pointer;
 }
-.OurServicesBoxes:hover .OurServiceText p:nth-child(2){
-    color: red;
+
+.OurServicesBoxes:hover .OurServiceText p.SecondDark:nth-child(2){
+    color: #692003;
+}
+.OurServicesBoxes:hover .OurServiceText p.SecondLight:nth-child(2){
+    color: rgba(207, 57, 2, 0.94) ;
 }
 .OurServiceText p:nth-child(2){
     font-size: clamp(1rem, 5vw, 20px);

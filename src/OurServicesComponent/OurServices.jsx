@@ -67,7 +67,7 @@ const OurServices = () => {
               const Liii = isLike ? 'red' : null
               return(
                 <SwiperSlide>
-                  <OurServicesCard Content={Content} HandleLike={HandleLike} Liii={Liii}/>
+                  <OurServicesCard key={Content.id} Content={Content} HandleLike={HandleLike} Liii={Liii}/>
               </SwiperSlide>
               )
           })}

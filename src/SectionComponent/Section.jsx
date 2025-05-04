@@ -10,6 +10,7 @@ import { gsap } from 'gsap'
 import { DarkColor, FeaturedShopLIst, LightColor, DacColor, LigColor, BookingList, SectionServicesLIst } from '../List'
 import { FaHeart } from 'react-icons/fa'
 import BookDetailsTWO from './BookDetailsTWO/BookDetailsTWO'
+import SectionCard from './SectionCard/SectionCard'
 const Section = () => {
     const {isDarkMood, onbookTWO} = useContext(ThemeContext)
     const [isHover, setIsHover] = useState(null)
@@ -69,25 +70,8 @@ const Section = () => {
                     const Liii = isLike ? 'red' : null
                     
                     return (
-                        <div key={Content.id} className="SectionBox" style={{ color: isDarkMood ? LightColor : DarkColor, 
-                            background: isDarkMood ? DarkColor: LightColor, 
-                            // border: isDarkMood ? '0.1px solid rgb(29, 29, 29)' : '0.1px solid rgb(230, 227, 227)'
-                             }}>
-                    <div className="SectionIMG">
-                        <img src={Content.IMG}/>
-                    </div>
-                        <div className="SectionBoxText">
-                            <p>{Content.First}</p>
-                            <p>{Content.Second}</p>
-                            <p><img src='#'/>{Content.Third}</p>
-                            <p>{Content.Address}</p>
-                            <p>{Content.Price}<del>{Content.DelPrice}</del></p>
-                            <button style={{ color: isDarkMood ? 'white' : 'black' }} onClick={ () => onbookTWO(Content)}>Book Now</button>
-                            <div onClick={(e) => HandleLike(Content.id, e)} className={`${'LOve'} `} style={{ color: Liii, cursor: 'pointer', 
-                            transition: 'color 0.3s ease', 
-                            display: 'flex', border: isDarkMood ? '0.1px solid rgb(29, 29, 29)' : '0.1px solid rgb(230, 227, 227)'}}><FaHeart/></div>
-                        </div>
-                    </div>
+                        <SectionCard key={Content.id} Content={Content} HandleLike={HandleLike} Liii={Liii}/>
+                        
                     )
                 })}
                 

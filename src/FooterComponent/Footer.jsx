@@ -32,7 +32,7 @@ const Footer = () => {
                         <i style={{ color: isDarkMood ? LightColor: DarkColor, background: isDarkMood ? 'rgb(19, 14, 14)'  : 'rgb(253, 232, 236)'}}><FaYoutube/></i>
                     </div>
                     <div className="Email">
-                        <input placeholder='Enter email here...'/>
+                        <input style={{color: isDarkMood ? 'white' : 'black'}} placeholder='Enter email here...'/>
                         <button style={{background: isDarkMood ? LigColor : DacColor, color: isDarkMood ? 'white' : 'black' }}>Find Now</button>
                     </div>
                     <nav>

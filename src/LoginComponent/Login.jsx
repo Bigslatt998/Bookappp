@@ -14,7 +14,7 @@ const schema = yup.object().shape({
 })
 
 const Login = () => {
-    const {isDarkMood} = useContext(ThemeContext)
+    const {isDarkMood, handleHome} = useContext(ThemeContext)
     const { register, 
             handleSubmit, 
             formState: { errors}, 
@@ -24,9 +24,7 @@ const Login = () => {
         console.log('submitted', data)
     }
     const navigate = useNavigate()
-    const handleHome = () => {
-        navigate('/')
-    }
+   
     const handleRegistration = () => {
         navigate('/Registration')
     }
@@ -54,13 +52,13 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="username">
                     <label>Username <span>*</span></label>
-                    <input type='email' {...register('email')} placeholder='Username'/>
+                    <input style={{color: isDarkMood ? 'white' : 'black'}} type='email' {...register('email')} placeholder='Username'/>
                     <p className='ErrorMessage'>{errors.email?.message}</p>
                     </div>
                     
                     <div className="passsword">
                     <label>Password <span>*</span></label>
-                    <input type='password' {...register('password')} placeholder='Enter password'/>
+                    <input style={{color: isDarkMood ? 'white' : 'black'}} type='password' {...register('password')} placeholder='Enter password'/>
                     <i><FaEye/></i>
                     <p className='ErrorMessage'>{errors.password?.message}</p>
                     
@@ -72,7 +70,7 @@ const Login = () => {
                             I agree with Teeno's &nbsp; < a href='#' className={` ${'PPP'} ${isDarkMood ? 'btnDark' : 'btnLight'}`}>Terms & Conditions</a>
                         </label>
                         <label className='CheckboxContainer'>
-                            <input type='checkbox'/>
+                            <input  type='checkbox'/>
                             <span className='checkmark'></span>
                             I’d like being informed about latest news and tips
                         </label>

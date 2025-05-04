@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useRef, useState} from 'react'
 export const ThemeContext = createContext()
 import { DarkColor, LightColor } from './List'
+import { useNavigate } from 'react-router-dom'
+
 
 const ThemeProvider = ({children}) => {
   const storedTheme = JSON.parse(localStorage.getItem("isDarkMode"))
@@ -58,7 +60,27 @@ const ThemeProvider = ({children}) => {
             setIsBookBoxTWO(false)
 
           }
-
+          const handleBookBox = (Content) => {
+            setSelectedStaff(Content.Staff)
+            setSelectedShop(Content)
+            setIsBookBox(true)
+            console.log(Content)
+          }
+              const navigate = useNavigate()
+          
+          const handleHome = () => {
+            navigate('/')
+        }
+          // const [ShowPassword, setShowPassword] = useState(false)
+      
+          // const handlepasswordVisibility = () => {
+          //   if(Password.trim() === ''){
+          //       alert('Please enter a password')
+          //       return EyeSlash
+          //   }
+          //   setShowPassword(!ShowPassword)
+          // }
+          // <i onClick={handlepasswordVisibility}>{ShowPassword? Eye : EyeSlash}</i>
         
         
           
@@ -76,7 +98,8 @@ const ThemeProvider = ({children}) => {
                                     scrollHome, isDarkMood, isMenue, 
                                     setIsMenue, HandleMeneOpen,
                                     newMessage, setNewMessage,
-                                    Message, setMessage}}>
+                                    Message, setMessage,
+                                    handleBookBox, handleHome}}>
         {children}
     </ThemeContext.Provider>
 

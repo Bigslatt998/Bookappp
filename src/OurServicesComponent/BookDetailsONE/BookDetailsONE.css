@@ -550,6 +550,10 @@
     /* justify-content: center; */
     align-items: center;
 }
+.Navigation span{
+    display: flex;
+    align-items: center;
+}
 .Navigation button.btnDark{
     color: #692003;
 }

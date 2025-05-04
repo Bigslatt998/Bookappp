@@ -8,14 +8,9 @@ import './OurServicesCard.css'
 const OurServicesCard = ({Content, Liii, HandleLike}) => {
             const {isDarkMood, isBookBox,
                   setSelectedStaff, selectedShop, 
-                  setSelectedShop, setIsBookBox} = 
+                  setSelectedShop, setIsBookBox, handleBookBox} = 
                   useContext(ThemeContext)
-            const handleBookBox = (Content) => {
-              setSelectedStaff(Content.Staff)
-              setSelectedShop(Content)
-              setIsBookBox(true)
-              console.log(Content)
-            }
+       
   return (
     <div className="OurServicesBoxes" style={{ color: isDarkMood ? LightColor : DarkColor, 
         background: isDarkMood ? DarkColor: LightColor,
@@ -26,7 +21,7 @@ const OurServicesCard = ({Content, Liii, HandleLike}) => {
 </div>
 <div className="OurServiceText">
 <p>{Content.First}</p>
-<p>{Content.Second}</p>
+<p className={`${isDarkMood ? 'SecondDark' : 'SecondLight'}`}>{Content.Second}</p>
 <p><img src='#'/>{Content.Third}</p>
 <p>{Content.Address}</p>
 <p>{Content.Price}<del>{Content.DelPrice}</del></p>

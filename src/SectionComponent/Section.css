@@ -193,8 +193,11 @@
     rgba(255, 165, 0, 1 ) 80%);
 }
 
-.SectionBox:hover .SectionBoxText p:nth-child(2){
-    color: red;
+.SectionBox:hover .SectionBoxText p.SecondDark:nth-child(2){
+    color: #692003;
+}
+.SectionBox:hover .SectionBoxText p.SecondLight:nth-child(2){
+    color: rgba(207, 57, 2, 0.94) ;
 }
 .SectionBoxText p:nth-child(2){
     font-size: clamp(1rem, 5vw, 20px);

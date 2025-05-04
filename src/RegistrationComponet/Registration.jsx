@@ -58,19 +58,19 @@ const Registration = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="username">
                         <label>Username <span>*</span></label>
-                        <input type='text' {...register('username')} placeholder='Username'/>
+                        <inpu style={{color: isDarkMood ? 'white' : 'black'}}t type='text' {...register('username')} placeholder='Username'/>
                         <p className='ErrorMessa'>{errors.username?.message}</p>
                         </div>
                         
                         <div className="username">
                         <label>Email <span>*</span></label>
-                        <input type='email' {...register('email')} placeholder='Example@gmail.com'/>
+                        <input style={{color: isDarkMood ? 'white' : 'black'}} type='email' {...register('email')} placeholder='Example@gmail.com'/>
                         <p className='ErrorMessa'>{errors.email?.message}</p>
                         </div>
 
                         <div className="passsword">
                         <label>Password <span>*</span></label>
-                        <input type='password' {...register('password')} placeholder='Enter password...'/>
+                        <input style={{color: isDarkMood ? 'white' : 'black'}} type='password' {...register('password')} placeholder='Enter password...'/>
                         <i><FaEye/></i>
                         <p className='ErrorMessa'>{errors.password?.message}</p>
                         
@@ -78,7 +78,7 @@ const Registration = () => {
 
                         <div className="passsword">
                         <label>Confirm Password <span>*</span></label>
-                        <input type='password' {...register('ConfirmPassword')} placeholder='Confirm password...'/>
+                        <input style={{color: isDarkMood ? 'white' : 'black'}} type='password' {...register('ConfirmPassword')} placeholder='Confirm password...'/>
                         <i><FaEye/></i>
                         <p className='ErrorMessa'>{errors.ConfirmPassword?.message}</p>
                         

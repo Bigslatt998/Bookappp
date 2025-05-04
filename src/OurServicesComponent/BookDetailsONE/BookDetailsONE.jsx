@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faCalendarCheck, faMagnifyingGlass, faMicrophoneLines, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { BookDetailsList, TimeSlot,  DarkColor, LightColor, LigColor, DacColor } from '../../List';
 import OurServicesCard from '../OurServicesCard/OurServicesCard'
-import { FaAngleLeft, FaAngleRight, FaBitcoin, FaCheck, FaClock, FaComments, FaPaperPlane, FaUser } from 'react-icons/fa'
+import { FaAngleLeft, FaAngleRight, FaBitcoin, FaCheck, FaClock, FaComments, FaHome, FaPaperPlane, FaUser } from 'react-icons/fa'
 import { ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -268,8 +268,8 @@ const BookDetailsONE = () => {
                     {Mark}
                   </div>
                 <div className='MessabeBox'>
-                {Message.map((msg) => (
-                  <div className="MessaageBoxContainer">
+                {Message.map((msg, index) => (
+                  <div key={index} className="MessaageBoxContainer">
                     <div className={`message ${msg.sender}`}>
                     <div className={`ICons ${msg.sender}`} style={{ background: isDarkMood ? '#692003' : 'rgba(207, 57, 2, 0.94)'}}>
                     {msg.sender === 'staff' ? (
@@ -412,7 +412,7 @@ const BookDetailsONE = () => {
               <div className="PIckTime">
                 <div className="PicktimeWripper">
                 {TimeSlot.map((Time) => (
-                  <div  onClick={() => handleTime(Time)} className={`box ${selectedTime === Time ? 'selectedTiime' : ''}`}>
+                  <div key={Time.id}  onClick={() => handleTime(Time)} className={`box ${selectedTime === Time ? 'selectedTiime' : ''}`}>
                   {selectedTime.id === Time.id &&(
                   <div className='checkkk'>
                       <FaCheck/>
@@ -441,7 +441,7 @@ const BookDetailsONE = () => {
           )} */}
 
       {currentStep === 3 && (
-              <div className="payment">
+              <div className="payment" >
                 <label> Choose a payment method</label>
                 <select style={{ color: isDarkMood ? 'white' : 'black'}}>
                   <option>Credit Card</option>
@@ -463,9 +463,9 @@ const BookDetailsONE = () => {
         </div>
 <div className='Navigation' >
           {currentStep > 1 && (
-            <button onClick={handleBack} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>Prev step</button>
+            <button onClick={handleBack} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}><span>Prev step<FaAngleLeft/></span></button>
           )}
-          <button onClick={handleNext} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>{currentStep === 4 ? 'Back To Home' : `Next step`}</button>
+          <button onClick={handleNext} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>{currentStep === 4 ? <span onClick={ClostBookDetails}>Back Home <FaHome/></span> : <span>Next step<FaAngleRight/></span>}</button>
         </div>
         
     </div>
