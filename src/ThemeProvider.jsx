@@ -41,12 +41,16 @@ const ThemeProvider = ({children}) => {
         // }
       
          
-        
+    const [newMessage, setNewMessage] = useState('')
+    const [Message, setMessage] = useState([])
+  
   const [isChat, setIsChat] = useState(false)
          
           const ClostBookDetails = () => {
             setIsBookBox(false)
             setIsChat(false)
+            setMessage([])
+            setCurrentStep(1)
             // setCurrentStep(1)
 
           }
@@ -70,7 +74,9 @@ const ThemeProvider = ({children}) => {
                                     ClostBookDetailsTWO, HomeRef,
                                     currentStep, setCurrentStep,
                                     scrollHome, isDarkMood, isMenue, 
-                                    setIsMenue, HandleMeneOpen}}>
+                                    setIsMenue, HandleMeneOpen,
+                                    newMessage, setNewMessage,
+                                    Message, setMessage}}>
         {children}
     </ThemeContext.Provider>
 

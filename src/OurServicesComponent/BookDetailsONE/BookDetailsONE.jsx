@@ -33,7 +33,9 @@ const BookDetailsONE = () => {
         setStaffname, staffname, 
         setSelectedTime, 
         selectedTime, selectedDate,
-        setIsChat, isChat,} = useContext(ThemeContext)
+        setIsChat, isChat, 
+        newMessage, setNewMessage,
+        Message, setMessage} = useContext(ThemeContext)
   
   const staffArray = selectedStaff ? Object.values(selectedStaff)
                     .filter((staff, index , self) => 
@@ -112,7 +114,6 @@ const BookDetailsONE = () => {
     setSelectedTime(Time)
     console.log(Time)
   }
-  const [Message, setMessage] = useState([])
   const messageEndRef = useRef(null)
 
   useEffect(() => {
@@ -136,7 +137,7 @@ const BookDetailsONE = () => {
   const HandleChatBox = () => {
     setIsChat(!isChat)
   }
-  const [newMessage, setNewMessage] = useState('')
+  // const [newMessage, setNewMessage] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const handleSendMsg = () => {
     if(!newMessage.trim()) return
@@ -257,9 +258,15 @@ const BookDetailsONE = () => {
                   position: 'absolute',
                   left:'0px',
                   top: '0px',
+                  overflow: 'hidden',
+
                   cursor: isDragging ? 'grabbing' : 'grab',
                   background: isDarkMood ? DarkColor: LightColor
                 }}>
+
+                  <div className="CloseChatBox" onClick={HandleChatBox} style={{ background: isDarkMood ? DarkColor: LightColor }}>
+                    {Mark}
+                  </div>
                 <div className='MessabeBox'>
                 {Message.map((msg) => (
                   <div className="MessaageBoxContainer">
@@ -313,8 +320,7 @@ const BookDetailsONE = () => {
               )}
         <div className="BookDetails">
                                       
-        <i className= 'Close' onClick={ClostBookDetails}
-                                style={{ background: isDarkMood ? DarkColor: LightColor }}>{Mark}</i>
+        
         <p className='BookDetailsP'>{selectedShop.First}</p>
           {/* <ToastContainer/> */}
             <nav>
@@ -333,6 +339,8 @@ const BookDetailsONE = () => {
                 </div>
                 ))}
               </ul>
+              <i className= 'Close' onClick={ClostBookDetails}
+                                style={{ background: isDarkMood ? DarkColor: LightColor }}>{Mark}</i>
             </nav>
         </div>
         
@@ -455,9 +463,9 @@ const BookDetailsONE = () => {
         </div>
 <div className='Navigation' >
           {currentStep > 1 && (
-            <button onClick={handleBack} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>Prev step <span><FaAngleLeft/></span></button>
+            <button onClick={handleBack} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>Prev step</button>
           )}
-          <button onClick={handleNext} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>{currentStep === 4 ? 'Back To Home' : `Next step ${<FaAngleLeft/>}`}</button>
+          <button onClick={handleNext} className={`${isDarkMood ? 'btnDark' : 'btnLight'}`}>{currentStep === 4 ? 'Back To Home' : `Next step`}</button>
         </div>
         
     </div>

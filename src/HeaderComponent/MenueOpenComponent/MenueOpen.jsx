@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import './MenueOpen.css'
 import { NavList, BookAppLogo, DarkColor, LightColor , LigColor, DacColor} from '../../List'
 import { ThemeContext } from '../../ThemeProvider'
-import { FaGlobe } from 'react-icons/fa'
+import { FaGlobe, FaMoon, FaSun } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 
 const MenueOpen = ({isMenue, HandleMeneOpen}) => {
@@ -31,7 +31,19 @@ const MenueOpen = ({isMenue, HandleMeneOpen}) => {
             </div>
             <button onClick={handleNavigate} style={{background: isDarkMood ? LigColor : DacColor, color: isDarkMood ? 'white' : 'black' }}>Login</button>
         </div>
-        <p onClick={handleTheme}>Change</p>
+        <div className="checkbox-wrapper-35">
+                    <input value="private" name="switch" id="switch" type="checkbox" className="switch" onChange={handleTheme}/>
+                      <label htmlFor="switch">
+                          <span className="switch-x-text">This is </span>
+                          <span className="switch-x-toggletext" onClick={handleTheme}>
+                            <span className="switch-x-unchecked">
+                                <span className="switch-x-hiddenlabel">Unchecked: </span><FaMoon/></span>
+                                <span className="switch-x-checked">
+                                <span className="switch-x-hiddenlabel">Checked: </span><FaSun/> </span>
+                          </span>
+                    </label>
+                </div>
+        {/* // <p onClick={handleTheme}>Change</p> */}
 
     </div>
   )
